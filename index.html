@@ -509,9 +509,11 @@
 
         <div class="grid md:grid-cols-3 gap-5">
           <article class="bg-white border border-slate-100 rounded-2xl overflow-hidden hover:shadow-lg transition-shadow group">
-            <div class="h-44 bg-saka-navy flex flex-col items-center justify-center p-6 text-center">
-              <p class="text-saka-green text-xs font-bold uppercase tracking-widest mb-2">Notice</p>
-              <p class="text-white font-bold text-base leading-snug">2026 전국 생활체육대축전</p>
+            <div class="h-48 relative overflow-hidden">
+              <img src="./img/slider-1.jpg" alt="전국 생활체육대축전" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <div class="absolute inset-0 bg-saka-navy/60 flex flex-col items-end justify-end p-4">
+                <span class="text-[10px] bg-saka-green text-white font-bold px-2 py-0.5 rounded uppercase tracking-widest">Notice</span>
+              </div>
             </div>
             <div class="p-5">
               <span class="text-[11px] bg-saka-green/10 text-saka-green font-semibold px-2 py-0.5 rounded-full">공지사항</span>
@@ -523,9 +525,11 @@
           </article>
 
           <article class="bg-white border border-slate-100 rounded-2xl overflow-hidden hover:shadow-lg transition-shadow group">
-            <div class="h-44 flex flex-col items-center justify-center p-6 text-center" style="background:#0a2218;">
-              <p class="text-saka-green text-xs font-bold uppercase tracking-widest mb-2">International</p>
-              <p class="text-white font-bold text-base leading-snug">TAFISA World Forum</p>
+            <div class="h-48 relative overflow-hidden">
+              <img src="./img/slider-4.jpg" alt="TAFISA ASFAA Congress Busan" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <div class="absolute inset-0 bg-saka-navy/55 flex flex-col items-end justify-end p-4">
+                <span class="text-[10px] bg-saka-sky text-white font-bold px-2 py-0.5 rounded uppercase tracking-widest">International</span>
+              </div>
             </div>
             <div class="p-5">
               <span class="text-[11px] bg-saka-sky/10 text-saka-sky font-semibold px-2 py-0.5 rounded-full">국제 교류</span>
@@ -537,9 +541,11 @@
           </article>
 
           <article class="bg-white border border-slate-100 rounded-2xl overflow-hidden hover:shadow-lg transition-shadow group">
-            <div class="h-44 flex flex-col items-center justify-center p-6 text-center" style="background:#1c100a;">
-              <p class="text-saka-accent text-xs font-bold uppercase tracking-widest mb-2">Education</p>
-              <p class="text-white font-bold text-base leading-snug">지도자 자격 연수</p>
+            <div class="h-48 relative overflow-hidden">
+              <img src="./img/slider-2.jpg" alt="TAFISA Mission 2030 태권도 시범" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <div class="absolute inset-0 bg-saka-navy/55 flex flex-col items-end justify-end p-4">
+                <span class="text-[10px] bg-saka-accent text-white font-bold px-2 py-0.5 rounded uppercase tracking-widest">Education</span>
+              </div>
             </div>
             <div class="p-5">
               <span class="text-[11px] bg-saka-accent/10 text-saka-accent font-semibold px-2 py-0.5 rounded-full">교육</span>
@@ -549,6 +555,61 @@
               <p class="text-xs text-slate-400">2026. 05. 08</p>
             </div>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 주요 활동 갤러리 ── -->
+    <section class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mb-12">
+          <span class="inline-flex items-center gap-2 text-xs font-bold tracking-widest text-saka-green uppercase mb-3">
+            <span class="w-5 h-0.5 bg-saka-green rounded"></span>Gallery
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-saka-navy">SAKA·TAFISA 주요 활동</h2>
+        </div>
+
+        <!-- 그리드: 왼쪽 큰 사진 1 + 오른쪽 작은 사진 3 -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+
+          <!-- 왼쪽 메인 사진 -->
+          <div class="lg:col-span-2 relative rounded-2xl overflow-hidden group h-72 lg:h-auto">
+            <img src="./img/slider-4.jpg" alt="ASFAA Congress Busan 2022 Sport for All 선언식"
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-saka-navy/80 via-transparent to-transparent flex flex-col justify-end p-7">
+              <span class="text-saka-green text-xs font-bold uppercase tracking-widest mb-1">ASFAA Congress · Busan 2022</span>
+              <p class="text-white font-black text-xl leading-snug">The Declaration of Sport for All</p>
+            </div>
+          </div>
+
+          <!-- 오른쪽 작은 사진 3장 -->
+          <div class="flex flex-col gap-4">
+
+            <div class="relative rounded-2xl overflow-hidden group h-40">
+              <img src="./img/slider-1.jpg" alt="부산 광안리 생활체육 걷기 행사"
+                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+              <div class="absolute inset-0 bg-gradient-to-t from-saka-navy/75 via-transparent to-transparent flex flex-col justify-end p-4">
+                <p class="text-white font-bold text-sm leading-snug">전국 생활체육 걷기 행사</p>
+              </div>
+            </div>
+
+            <div class="relative rounded-2xl overflow-hidden group h-40">
+              <img src="./img/slider-2.jpg" alt="TAFISA Mission 2030 태권도 시범"
+                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+              <div class="absolute inset-0 bg-gradient-to-t from-saka-navy/75 via-transparent to-transparent flex flex-col justify-end p-4">
+                <p class="text-white font-bold text-sm leading-snug">TAFISA Mission 2030 · For an Active World</p>
+              </div>
+            </div>
+
+            <div class="relative rounded-2xl overflow-hidden group h-40">
+              <img src="./img/slider-3.jpg" alt="TAFISA World Challenge Day 포르투갈"
+                   class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700">
+              <div class="absolute inset-0 bg-gradient-to-t from-saka-navy/75 via-transparent to-transparent flex flex-col justify-end p-4">
+                <p class="text-white font-bold text-sm leading-snug">TAFISA World Challenge Day · Portugal</p>
+              </div>
+            </div>
+
+          </div>
         </div>
       </div>
     </section>
