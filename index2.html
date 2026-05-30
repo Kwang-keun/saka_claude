@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SAKA 한국본부 - Sport for All Korea Association</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            saka: {
+              navy:    '#0D1A26',
+              teal:    '#006D82',
+              orange:  '#F97316',
+              green:   '#00A651',
+              gray:    '#EEF1F5',
+              card:    '#1A2635',
+            }
+          },
+          fontFamily: {
+            sans: ['"Noto Sans KR"', 'sans-serif'],
+          },
+          keyframes: {
+            floatY: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%':      { transform: 'translateY(-8px)' },
+            }
+          },
+          animation: {
+            floatY: 'floatY 4s ease-in-out infinite',
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    html { scroll-behavior: smooth; }
+
+    /* 네비 드롭다운 화살표 */
+    .has-dropdown { position: relative; }
+    .has-dropdown::after {
+      content: '∨';
+      font-size: 10px;
+      margin-left: 4px;
+      opacity: 0.5;
+    }
+
+    /* 네비 하단 라인 */
+    .nav-item { position: relative; padding: 22px 14px; display: block; }
+    .nav-item::after {
+      content: '';
+      position: absolute;
+      left: 14px; right: 14px; bottom: 0;
+      height: 2px;
+      background: #0D1A26;
+      transform: scaleX(0);
+      transition: transform 0.2s ease;
+    }
+    .nav-item:hover::after { transform: scaleX(1); }
+
+    /* 히어로 배경 */
+    .hero-bg {
+      background: linear-gradient(145deg, #EEF1F5 0%, #E4EAF2 50%, #DDE5F0 100%);
+    }
+
+    /* 플로팅 카드 그림자 */
+    .card-float {
+      box-shadow: 0 32px 64px rgba(13,26,38,0.22), 0 8px 24px rgba(0,0,0,0.12);
+    }
+    .badge-float {
+      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    }
+
+    /* 프로그레스바 */
+    .prog-bar {
+      height: 5px;
+      border-radius: 3px;
+      background: linear-gradient(90deg, #F97316 0%, #FBBF24 40%, #00A651 75%, #0EA5E9 100%);
+    }
+
+    /* 섹션 레이블 */
+    .section-label {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 0.7rem; font-weight: 700;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      color: #00A651;
+    }
+    .section-label::before {
+      content: ''; display: block;
+      width: 20px; height: 2px; background: #00A651;
+    }
+
+    /* 카드 hover */
+    .prog-card {
+      border-left: 3px solid transparent;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .prog-card:hover {
+      border-left-color: #00A651;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+    }
+  </style>
+</head>
+<body class="font-sans text-gray-800 antialiased">
+
+  <!-- ── AFFILIATION 최상단 바 ── -->
+  <div class="bg-saka-navy text-gray-400 text-xs">
+    <div class="max-w-7xl mx-auto px-6 py-2 flex items-center justify-between">
+      <!-- 왼쪽: 배지 + 설명 -->
+      <div class="flex items-center gap-3">
+        <span class="inline-flex items-center gap-1.5 bg-saka-green text-white font-bold
+                     px-2.5 py-0.5 rounded text-[10px] tracking-widest uppercase">
+          AFFILIATION
+        </span>
+        <span class="text-gray-400 hidden sm:inline">
+          세계생활체육연맹 (TAFISA) 공식 하부 한국 총괄기관
+        </span>
+      </div>
+      <!-- 오른쪽: 유틸리티 링크 -->
+      <div class="flex items-center gap-4 text-gray-400">
+        <a href="#" class="hover:text-white transition">TAFISA 소개</a>
+        <span class="opacity-30">|</span>
+        <a href="#" class="hover:text-white transition">글로벌 네트워크</a>
+        <span class="opacity-30">|</span>
+        <a href="#" class="hover:text-white transition font-semibold text-white">통합 회원가입</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── 메인 네비게이션 (흰 배경) ── -->
+  <header class="bg-white border-b border-gray-200 sticky top-0 z-50">
+    <nav class="max-w-7xl mx-auto px-6 flex items-center justify-between">
+
+      <!-- 로고 -->
+      <a href="#" class="flex items-center gap-3 py-3 flex-shrink-0">
+        <div class="w-10 h-10 bg-saka-navy rounded-lg flex items-center justify-center">
+          <!-- 글로브 아이콘 -->
+          <svg class="w-5 h-5 text-saka-green" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/>
+          </svg>
+        </div>
+        <div class="leading-tight">
+          <div class="flex items-baseline gap-1.5">
+            <span class="font-black text-saka-navy text-lg tracking-tight">SAKA</span>
+            <span class="text-saka-teal font-semibold text-sm">한국본부</span>
+          </div>
+          <p class="text-gray-400 text-[9px] font-medium tracking-[0.12em] uppercase leading-none">
+            Sport for All Korea Association
+          </p>
+        </div>
+      </a>
+
+      <!-- 데스크톱 메뉴 -->
+      <ul class="hidden md:flex items-center text-sm font-medium text-gray-600">
+        <li><a href="#about"    class="nav-item has-dropdown hover:text-saka-navy transition">SAKA 소개</a></li>
+        <li><a href="#programs" class="nav-item has-dropdown hover:text-saka-navy transition">주요 사업</a></li>
+        <li><a href="#tafisa"   class="nav-item hover:text-saka-navy transition">TAFISA 세계연맹</a></li>
+        <li><a href="#news"     class="nav-item hover:text-saka-navy transition">소식 및 참여</a></li>
+      </ul>
+
+      <!-- 우측 유틸 -->
+      <div class="hidden md:flex items-center gap-4">
+        <a href="#contact" class="text-sm text-gray-500 hover:text-saka-navy transition font-medium">오시는 길</a>
+        <a href="#join"
+           class="px-5 py-2.5 bg-saka-navy text-white text-sm font-bold rounded-md hover:bg-gray-800 transition">
+          멤버십 신청
+        </a>
+      </div>
+
+      <!-- 모바일 햄버거 -->
+      <button class="md:hidden p-2 flex flex-col gap-1.5" aria-label="메뉴">
+        <span class="w-6 h-0.5 bg-gray-600 block"></span>
+        <span class="w-6 h-0.5 bg-gray-600 block"></span>
+        <span class="w-6 h-0.5 bg-gray-600 block"></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- ── HERO ── -->
+  <section class="hero-bg overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 pt-20 pb-16 flex flex-col lg:flex-row items-center gap-16">
+
+      <!-- 왼쪽: 텍스트 -->
+      <div class="flex-1 min-w-0">
+
+        <!-- 글로벌 배지 -->
+        <div class="inline-flex items-center gap-2 border border-gray-300 rounded-full
+                    px-4 py-1.5 mb-6 bg-white bg-opacity-70">
+          <span class="w-2 h-2 bg-saka-green rounded-full animate-pulse"></span>
+          <span class="text-xs font-bold text-gray-600 tracking-widest uppercase">
+            Global Standard in Sport for All
+          </span>
+        </div>
+
+        <!-- 서브 헤드라인 -->
+        <p class="text-saka-teal font-semibold text-base mb-3">
+          세계생활체육연맹 하부 SAKA 한국본부
+        </p>
+
+        <!-- 메인 헤드라인 -->
+        <h1 class="text-4xl md:text-5xl font-black text-saka-navy leading-[1.18] mb-6 tracking-tight">
+          생활체육으로 건강한 나라,<br/>
+          세계로 뻗어나가는
+          <span class="text-saka-orange"> SAKA</span>
+        </h1>
+
+        <!-- 본문 -->
+        <p class="text-gray-500 text-base leading-relaxed mb-8 max-w-lg">
+          SAKA(한국생활체육총연맹)는 인종, 성별, 연령을 초월하여 국민 모두가
+          스포츠를 즐길 권리를 누리도록 지원하며, 글로벌 네트워크를 기반으로
+          활력 넘치는 건강한 사회를 개척합니다.
+        </p>
+
+        <!-- CTA 버튼 -->
+        <div class="flex flex-wrap gap-3 mb-14">
+          <a href="#join"
+             class="inline-flex items-center gap-2 px-7 py-3.5 bg-saka-navy text-white
+                    font-bold rounded-md hover:bg-gray-800 transition text-sm">
+            지금 정회원 신청하기
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <path d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+            </svg>
+          </a>
+          <a href="#programs"
+             class="inline-flex items-center gap-2 px-7 py-3.5 border-2 border-gray-300
+                    text-gray-600 font-semibold rounded-md hover:border-saka-navy hover:text-saka-navy
+                    transition text-sm bg-white bg-opacity-60">
+            주요 사업 둘러보기
+          </a>
+        </div>
+
+        <!-- 통계 -->
+        <div class="flex items-center gap-10 border-t border-gray-200 pt-8">
+          <div>
+            <p class="text-3xl font-black text-saka-navy leading-none">150<span class="text-xl text-saka-teal">+</span></p>
+            <p class="text-xs text-gray-400 mt-1.5 font-medium">글로벌 회원국 네트워크</p>
+          </div>
+          <div class="w-px h-10 bg-gray-200"></div>
+          <div>
+            <p class="text-3xl font-black text-saka-navy leading-none">32<span class="text-xl text-saka-teal">년</span></p>
+            <p class="text-xs text-gray-400 mt-1.5 font-medium">역사 및 국민 신뢰</p>
+          </div>
+          <div class="w-px h-10 bg-gray-200"></div>
+          <div>
+            <p class="text-3xl font-black text-saka-orange leading-none">50만<span class="text-xl">+</span></p>
+            <p class="text-xs text-gray-400 mt-1.5 font-medium">누적 활동 참가자</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 오른쪽: 플로팅 UI 카드 -->
+      <div class="flex-shrink-0 relative w-full max-w-sm lg:max-w-md">
+
+        <!-- 메인 다크 카드 -->
+        <div class="card-float bg-saka-card rounded-2xl overflow-hidden animate-floatY">
+          <!-- 카드 상단 트래픽라이트 + 배지 -->
+          <div class="flex items-center justify-between px-5 pt-5 pb-3">
+            <div class="flex items-center gap-1.5">
+              <span class="w-3 h-3 rounded-full bg-red-400"></span>
+              <span class="w-3 h-3 rounded-full bg-yellow-400"></span>
+              <span class="w-3 h-3 rounded-full bg-green-400"></span>
+            </div>
+            <span class="text-[10px] font-bold text-gray-400 tracking-widest uppercase border border-gray-600 rounded px-2 py-0.5">
+              TAFISA MEMBER
+            </span>
+          </div>
+
+          <!-- 카드 헤드라인 -->
+          <div class="px-5 pb-5 border-b border-gray-700">
+            <h2 class="text-white font-black text-xl leading-tight">
+              SPORT FOR ALL<br/>
+              <span class="text-saka-green">CHANGES</span> THE WORLD.
+            </h2>
+          </div>
+
+          <!-- 지표 섹션 -->
+          <div class="px-5 py-4">
+            <div class="flex items-center justify-between mb-2">
+              <p class="text-gray-300 text-xs font-semibold">대한민국 생활체육 지표</p>
+              <span class="text-[10px] text-saka-green font-bold tracking-wide">2026 Live</span>
+            </div>
+            <div class="flex items-center justify-between mb-1.5">
+              <p class="text-gray-400 text-xs">정기적 체육활동 참여율</p>
+              <p class="text-saka-orange font-black text-sm">68.5%</p>
+            </div>
+            <div class="bg-gray-700 rounded-full h-1.5 overflow-hidden">
+              <div class="prog-bar h-full" style="width:68.5%"></div>
+            </div>
+
+            <!-- 하단 아바타 + 라벨 -->
+            <div class="flex items-center justify-between mt-4">
+              <div class="flex items-center">
+                <span class="w-7 h-7 rounded-full bg-saka-teal flex items-center justify-center text-white text-[10px] font-bold ring-2 ring-saka-card">K</span>
+                <span class="w-7 h-7 rounded-full bg-saka-green flex items-center justify-center text-white text-[10px] font-bold ring-2 ring-saka-card -ml-1.5">G</span>
+                <span class="w-7 h-7 rounded-full bg-saka-orange flex items-center justify-center text-white text-[10px] font-bold ring-2 ring-saka-card -ml-1.5">+</span>
+              </div>
+              <p class="text-gray-500 text-[10px] font-bold tracking-widest uppercase">SAKA KOREA CHAPTER</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 플로팅 배지 1: 우측 상단 — 국제 연합 인증 -->
+        <div class="badge-float absolute -top-4 -right-4 bg-white rounded-xl px-4 py-3 flex items-center gap-2.5 z-10">
+          <div class="w-8 h-8 bg-saka-green bg-opacity-15 rounded-lg flex items-center justify-center flex-shrink-0">
+            <svg class="w-4 h-4 text-saka-green" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+            </svg>
+          </div>
+          <div>
+            <p class="text-gray-400 text-[10px] font-medium leading-none mb-0.5">국제 연합</p>
+            <p class="text-saka-navy font-bold text-xs leading-none">공식 인증 획득</p>
+          </div>
+        </div>
+
+        <!-- 플로팅 배지 2: 좌측 하단 — 캠페인 -->
+        <div class="badge-float absolute -bottom-4 -left-4 bg-white rounded-xl px-4 py-3 flex items-center gap-2.5 z-10">
+          <div class="w-8 h-8 bg-orange-50 rounded-lg flex items-center justify-center flex-shrink-0">
+            <svg class="w-4 h-4 text-saka-orange" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
+            </svg>
+          </div>
+          <div>
+            <p class="text-gray-400 text-[10px] font-medium leading-none mb-0.5">연중 캠페인</p>
+            <p class="text-saka-navy font-bold text-xs leading-none">건강한 시민 공동체</p>
+          </div>
+        </div>
+
+      </div><!-- /플로팅 카드 -->
+    </div>
+  </section>
+
+  <!-- ── 퀵 네비 바 ── -->
+  <section class="bg-white border-y border-gray-200">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 divide-x divide-gray-200">
+        <a href="#" class="flex items-center gap-3 px-6 py-5 hover:bg-gray-50 group transition">
+          <svg class="w-4 h-4 text-gray-400 group-hover:text-saka-navy transition flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+          </svg>
+          <span class="text-sm font-medium text-gray-600 group-hover:text-saka-navy transition">공지사항</span>
+        </a>
+        <a href="#" class="flex items-center gap-3 px-6 py-5 hover:bg-gray-50 group transition">
+          <svg class="w-4 h-4 text-gray-400 group-hover:text-saka-navy transition flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+          </svg>
+          <span class="text-sm font-medium text-gray-600 group-hover:text-saka-navy transition">대회·행사</span>
+        </a>
+        <a href="#" class="flex items-center gap-3 px-6 py-5 hover:bg-gray-50 group transition">
+          <svg class="w-4 h-4 text-gray-400 group-hover:text-saka-navy transition flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+          </svg>
+          <span class="text-sm font-medium text-gray-600 group-hover:text-saka-navy transition">교육·자격증</span>
+        </a>
+        <a href="#" class="flex items-center gap-3 px-6 py-5 hover:bg-gray-50 group transition">
+          <svg class="w-4 h-4 text-gray-400 group-hover:text-saka-navy transition flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/>
+          </svg>
+          <span class="text-sm font-medium text-gray-600 group-hover:text-saka-navy transition">회원 단체</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TAFISA 연계 배너 ── -->
+  <section id="tafisa" class="bg-saka-navy py-8">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-4">
+        <div class="w-10 h-10 bg-saka-green bg-opacity-20 rounded-lg flex items-center justify-center flex-shrink-0">
+          <svg class="w-5 h-5 text-saka-green" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/>
+          </svg>
+        </div>
+        <div>
+          <p class="text-white font-bold text-sm">세계생활체육연맹(TAFISA) 공식 한국 회원 단체</p>
+          <p class="text-gray-400 text-xs mt-0.5">SAKA는 "Sport for All" 철학을 공유하는 TAFISA의 한국 대표 회원 연맹입니다.</p>
+        </div>
+      </div>
+      <a href="https://www.tafisa.org" target="_blank" rel="noopener"
+         class="flex-shrink-0 inline-flex items-center gap-2 px-5 py-2.5
+                border border-saka-green text-saka-green text-sm font-semibold rounded
+                hover:bg-saka-green hover:text-white transition">
+        TAFISA 공식 사이트 방문
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ── 주요 사업 ── -->
+  <section id="programs" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="mb-12">
+        <p class="section-label mb-3">Programs</p>
+        <h2 class="text-3xl md:text-4xl font-black text-saka-navy">주요 사업·프로그램</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-5">
+        <div class="prog-card bg-white border border-gray-200 rounded-xl p-7 group">
+          <div class="w-10 h-10 bg-saka-green bg-opacity-10 rounded-lg flex items-center justify-center mb-5">
+            <svg class="w-5 h-5 text-saka-green" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </div>
+          <h3 class="font-bold text-base text-saka-navy mb-2">전국 생활체육대축전</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-5">전 국민이 참여하는 최대 규모 생활체육 축제. 지역 예선부터 전국 본선까지 다양한 종목으로 진행됩니다.</p>
+          <a href="#" class="inline-flex items-center gap-1 text-saka-teal text-sm font-semibold group-hover:gap-2 transition-all">자세히 보기 <span>&rarr;</span></a>
+        </div>
+        <div class="prog-card bg-white border border-gray-200 rounded-xl p-7 group">
+          <div class="w-10 h-10 bg-orange-50 rounded-lg flex items-center justify-center mb-5">
+            <svg class="w-5 h-5 text-saka-orange" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+          </div>
+          <h3 class="font-bold text-base text-saka-navy mb-2">건강 100세 운동 캠페인</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-5">고령층·취약계층을 위한 맞춤형 생활체육 프로그램으로 국민 건강 증진과 사회적 포용을 실현합니다.</p>
+          <a href="#" class="inline-flex items-center gap-1 text-saka-teal text-sm font-semibold group-hover:gap-2 transition-all">자세히 보기 <span>&rarr;</span></a>
+        </div>
+        <div class="prog-card bg-white border border-gray-200 rounded-xl p-7 group">
+          <div class="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center mb-5">
+            <svg class="w-5 h-5 text-saka-teal" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"/></svg>
+          </div>
+          <h3 class="font-bold text-base text-saka-navy mb-2">TAFISA 국제 교류</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-5">세계생활체육연맹과 협력하여 국제 대회·포럼 참가 및 글로벌 Sport for All 정책을 함께 추진합니다.</p>
+          <a href="#" class="inline-flex items-center gap-1 text-saka-teal text-sm font-semibold group-hover:gap-2 transition-all">자세히 보기 <span>&rarr;</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 공지·뉴스 ── -->
+  <section id="news" class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex items-end justify-between mb-12">
+        <div>
+          <p class="section-label mb-3">News & Notice</p>
+          <h2 class="text-3xl md:text-4xl font-black text-saka-navy">소식 및 뉴스</h2>
+        </div>
+        <a href="#" class="text-sm text-gray-500 hover:text-saka-navy transition font-medium hidden md:block">전체 보기 &rarr;</a>
+      </div>
+      <div class="grid md:grid-cols-3 gap-5">
+        <article class="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-md transition group">
+          <div class="h-44 bg-saka-navy flex flex-col items-center justify-center p-6 text-center">
+            <p class="text-saka-green text-xs font-bold uppercase tracking-widest mb-2">Notice</p>
+            <p class="text-white font-bold text-base leading-snug">2026 전국 생활체육대축전</p>
+          </div>
+          <div class="p-5">
+            <span class="text-[11px] bg-gray-100 text-gray-500 font-semibold px-2 py-0.5 rounded">공지사항</span>
+            <h4 class="font-bold text-gray-800 text-sm mt-2 mb-1 leading-snug group-hover:text-saka-teal transition">
+              2026 전국 생활체육대축전 참가 신청 안내
+            </h4>
+            <p class="text-xs text-gray-400">2026. 05. 20</p>
+          </div>
+        </article>
+        <article class="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-md transition group">
+          <div class="h-44 flex flex-col items-center justify-center p-6 text-center" style="background:#0a2a1a;">
+            <p class="text-saka-green text-xs font-bold uppercase tracking-widest mb-2">International</p>
+            <p class="text-white font-bold text-base leading-snug">TAFISA World Forum</p>
+          </div>
+          <div class="p-5">
+            <span class="text-[11px] bg-gray-100 text-gray-500 font-semibold px-2 py-0.5 rounded">국제 교류</span>
+            <h4 class="font-bold text-gray-800 text-sm mt-2 mb-1 leading-snug group-hover:text-saka-teal transition">
+              TAFISA 세계 생활체육 포럼 한국 대표단 참가 결과
+            </h4>
+            <p class="text-xs text-gray-400">2026. 05. 15</p>
+          </div>
+        </article>
+        <article class="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-md transition group">
+          <div class="h-44 flex flex-col items-center justify-center p-6 text-center" style="background:#1a1a0a;">
+            <p class="text-saka-orange text-xs font-bold uppercase tracking-widest mb-2">Education</p>
+            <p class="text-white font-bold text-base leading-snug">지도자 자격 연수</p>
+          </div>
+          <div class="p-5">
+            <span class="text-[11px] bg-gray-100 text-gray-500 font-semibold px-2 py-0.5 rounded">교육</span>
+            <h4 class="font-bold text-gray-800 text-sm mt-2 mb-1 leading-snug group-hover:text-saka-teal transition">
+              2026년 상반기 생활체육 지도자 자격 연수 모집
+            </h4>
+            <p class="text-xs text-gray-400">2026. 05. 08</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA 배너 ── -->
+  <section id="join" class="py-16 bg-white border-t border-gray-200">
+    <div class="max-w-5xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-8">
+      <div>
+        <p class="section-label mb-3">Join Us</p>
+        <h2 class="text-2xl md:text-3xl font-black text-saka-navy leading-tight">
+          함께 만드는 건강한 대한민국
+        </h2>
+        <p class="text-gray-400 text-sm mt-2">SAKA와 함께 생활체육의 가치를 실현하세요.</p>
+      </div>
+      <div class="flex flex-col sm:flex-row gap-3 flex-shrink-0">
+        <a href="#" class="px-7 py-3 bg-saka-navy text-white font-bold rounded-md hover:bg-gray-800 transition text-sm text-center">
+          단체 가입 신청
+        </a>
+        <a href="#contact" class="px-7 py-3 border border-gray-300 text-gray-600 font-medium rounded-md hover:border-saka-navy hover:text-saka-navy transition text-sm text-center">
+          문의하기
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer id="contact" class="bg-saka-navy text-gray-400">
+    <div class="max-w-7xl mx-auto px-6 pt-14 pb-10 grid md:grid-cols-4 gap-10">
+
+      <div class="md:col-span-2">
+        <div class="flex items-center gap-3 mb-5">
+          <div class="w-8 h-8 bg-saka-green bg-opacity-20 rounded flex items-center justify-center">
+            <svg class="w-4 h-4 text-saka-green" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20"/>
+            </svg>
+          </div>
+          <div>
+            <p class="text-white font-bold text-sm leading-none">한국생활체육총연맹</p>
+            <p class="text-saka-green text-[10px] font-bold tracking-widest uppercase mt-0.5">SAKA · Korea Chapter</p>
+          </div>
+        </div>
+        <p class="text-sm text-gray-500 leading-relaxed mb-5">
+          SAKA는 1991년 설립된 세계생활체육연맹(TAFISA) 공식 한국 회원 단체로,
+          국민 누구나 일상에서 스포츠를 즐길 수 있는 환경을 만들어 갑니다.
+        </p>
+        <address class="not-italic text-sm text-gray-500 space-y-1.5">
+          <p>서울특별시 송파구 올림픽로 424</p>
+          <p>Tel. 02-XXX-XXXX &nbsp;|&nbsp; Fax. 02-XXX-XXXX</p>
+          <p>info@saka.or.kr</p>
+        </address>
+      </div>
+
+      <div>
+        <h3 class="text-white font-semibold mb-4 text-xs uppercase tracking-widest">바로가기</h3>
+        <ul class="space-y-2 text-sm">
+          <li><a href="#" class="hover:text-saka-green transition">연맹 소개</a></li>
+          <li><a href="#" class="hover:text-saka-green transition">임원 및 조직</a></li>
+          <li><a href="#" class="hover:text-saka-green transition">회원 단체 현황</a></li>
+          <li><a href="#" class="hover:text-saka-green transition">사업·프로그램</a></li>
+          <li><a href="#" class="hover:text-saka-green transition">공지사항</a></li>
+          <li><a href="#" class="hover:text-saka-green transition">자료실</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-white font-semibold mb-4 text-xs uppercase tracking-widest">관련 기관</h3>
+        <ul class="space-y-2 text-sm">
+          <li>
+            <a href="https://www.tafisa.org" target="_blank" rel="noopener"
+               class="hover:text-saka-green transition flex items-center gap-1">
+              세계생활체육연맹 (TAFISA)
+              <svg class="w-3 h-3 opacity-40" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+            </a>
+          </li>
+          <li><a href="#" class="hover:text-saka-green transition">문화체육관광부</a></li>
+          <li><a href="#" class="hover:text-saka-green transition">국민체육진흥공단</a></li>
+          <li><a href="#" class="hover:text-saka-green transition">대한체육회</a></li>
+          <li><a href="#" class="hover:text-saka-green transition">스포츠안전재단</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="border-t border-white border-opacity-5">
+      <div class="max-w-7xl mx-auto px-6 py-5 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-gray-600">
+        <p>&copy; 2026 한국생활체육총연맹(SAKA). All rights reserved.</p>
+        <div class="flex gap-5">
+          <a href="#" class="hover:text-gray-400 transition">개인정보처리방침</a>
+          <a href="#" class="hover:text-gray-400 transition">이용약관</a>
+          <a href="#" class="hover:text-gray-400 transition">사이트맵</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
