@@ -91,17 +91,12 @@
   animation: marquee-ltr 18s linear infinite;
 }
 
-/* ── 히어로 텍스트 강한 그림자 ── */
+/* ── 히어로 텍스트 그림자 (가볍게) ── */
 .hero-shadow {
-  text-shadow:
-    0 2px 4px rgba(0,0,0,0.9),
-    0 4px 16px rgba(0,0,0,0.7),
-    0 0 40px rgba(0,0,0,0.5);
+  text-shadow: 0 1px 6px rgba(0,0,0,0.55), 0 2px 12px rgba(0,0,0,0.35);
 }
 .hero-body-shadow {
-  text-shadow:
-    0 1px 3px rgba(0,0,0,0.95),
-    0 3px 10px rgba(0,0,0,0.8);
+  text-shadow: 0 1px 4px rgba(0,0,0,0.6);
 }
 
 /* ── 모바일 최적화 ── */
