@@ -198,15 +198,14 @@
   <main class="flex-grow">
 
     <!-- ── HERO ── -->
-    <section class="relative bg-gradient-to-b from-slate-50 via-white to-slate-50 py-16 md:py-28 overflow-hidden min-h-[88vh] flex items-center">
+    <section class="relative py-16 md:py-28 overflow-hidden min-h-[88vh] flex items-center">
 
-      <!-- 배경 블러 원 -->
-      <div class="absolute top-1/4 left-0 w-72 h-72 md:w-96 md:h-96 rounded-full bg-gradient-to-tr from-saka-blue/10 to-saka-sky/15 blur-3xl animate-float-slow -z-10 opacity-70"></div>
-      <div class="absolute bottom-1/4 right-0 w-80 h-80 md:w-[480px] md:h-[480px] rounded-full bg-gradient-to-br from-saka-green/8 to-transparent blur-3xl animate-float-medium -z-10 opacity-60"></div>
-      <div class="absolute top-10 right-1/4 w-32 h-32 rounded-full bg-saka-sky/10 blur-2xl animate-pulse-soft -z-10"></div>
-
-      <!-- 도트 패턴 -->
-      <div class="absolute inset-0 dots-pattern opacity-40 -z-20"></div>
+      <!-- 배경 사진 -->
+      <div class="absolute inset-0 -z-20">
+        <img src="./img/slider-1.jpg" alt="생활체육 행사" class="w-full h-full object-cover object-center">
+      </div>
+      <!-- 어두운 그라디언트 오버레이 -->
+      <div class="absolute inset-0 -z-10 bg-gradient-to-r from-saka-dark/92 via-saka-navy/80 to-saka-navy/50"></div>
 
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative w-full">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
@@ -215,27 +214,27 @@
           <div class="lg:col-span-7 flex flex-col items-start">
 
             <!-- GLOBAL 배지 -->
-            <div class="inline-flex items-center gap-2 bg-white border border-slate-200 px-4 py-2 rounded-full shadow-sm mb-6">
+            <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-2 rounded-full mb-6">
               <span class="flex h-2 w-2 relative">
                 <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-saka-green opacity-75"></span>
                 <span class="relative inline-flex rounded-full h-2 w-2 bg-saka-green"></span>
               </span>
-              <span class="text-xs font-bold text-saka-navy tracking-wide">GLOBAL STANDARD IN SPORT FOR ALL</span>
+              <span class="text-xs font-bold text-white tracking-wide">GLOBAL STANDARD IN SPORT FOR ALL</span>
             </div>
 
             <!-- 서브 헤드 -->
-            <p class="text-saka-blue font-semibold text-base sm:text-lg mb-3">세계생활체육연맹 SAKA 한국본부</p>
+            <p class="text-saka-green font-semibold text-base sm:text-lg mb-3">세계생활체육연맹 SAKA 한국본부</p>
 
             <!-- 메인 헤드라인 -->
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-saka-navy leading-tight tracking-tight mb-6">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight tracking-tight mb-6 drop-shadow-lg">
               생활체육으로 건강한 나라,<br>
-              <span class="bg-gradient-to-r from-saka-blue via-saka-sky to-saka-accent bg-clip-text text-transparent">
+              <span class="bg-gradient-to-r from-saka-green via-saka-sky to-white bg-clip-text text-transparent">
                 세계로 뻗어나가는 SAKA
               </span>
             </h1>
 
             <!-- 본문 -->
-            <p class="text-slate-500 text-base sm:text-lg leading-relaxed max-w-xl mb-8">
+            <p class="text-slate-200 text-base sm:text-lg leading-relaxed max-w-xl mb-8">
               SAKA(한국생활체육총연맹)는 인종, 성별, 연령을 초월하여 국민 모두가 스포츠를 즐길 권리를 누리도록 지원하며,
               글로벌 네트워크를 기반으로 활력 넘치는 건강한 사회를 개척합니다.
             </p>
@@ -243,35 +242,34 @@
             <!-- CTA 버튼 -->
             <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-14">
               <a href="#membership"
-                 class="inline-flex items-center justify-center bg-gradient-to-r from-saka-navy via-saka-blue to-saka-sky
-                        text-white font-bold px-8 py-4 rounded-2xl shadow-xl shadow-saka-blue/20
-                        hover:shadow-2xl hover:shadow-saka-blue/30 hover:-translate-y-0.5 transition-all duration-300">
+                 class="inline-flex items-center justify-center bg-saka-green
+                        text-white font-bold px-8 py-4 rounded-2xl shadow-xl
+                        hover:bg-saka-gdark hover:-translate-y-0.5 transition-all duration-300">
                 지금 정회원 신청하기
                 <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
                 </svg>
               </a>
               <a href="#projects"
-                 class="inline-flex items-center justify-center bg-white border-2 border-slate-200
-                        text-slate-700 hover:text-saka-navy hover:border-saka-navy
-                        font-bold px-8 py-4 rounded-2xl hover:shadow-md transition-all duration-300">
+                 class="inline-flex items-center justify-center bg-white/10 backdrop-blur-sm border-2 border-white/40
+                        text-white font-bold px-8 py-4 rounded-2xl hover:bg-white/20 transition-all duration-300">
                 주요 사업 둘러보기
               </a>
             </div>
 
             <!-- 통계 -->
-            <div class="grid grid-cols-3 gap-6 sm:gap-10 border-t border-slate-200/80 pt-8 w-full max-w-lg">
+            <div class="grid grid-cols-3 gap-6 sm:gap-10 border-t border-white/20 pt-8 w-full max-w-lg">
               <div>
-                <span class="block text-2xl sm:text-3xl font-extrabold text-saka-navy tracking-tight">150+</span>
-                <span class="block text-xs font-semibold text-slate-500 mt-1">글로벌 회원국 네트워크</span>
+                <span class="block text-2xl sm:text-3xl font-extrabold text-white tracking-tight">150+</span>
+                <span class="block text-xs font-semibold text-slate-300 mt-1">글로벌 회원국 네트워크</span>
               </div>
               <div>
                 <span class="block text-2xl sm:text-3xl font-extrabold text-saka-green tracking-tight">32년</span>
-                <span class="block text-xs font-semibold text-slate-500 mt-1">역사 및 국민 신뢰</span>
+                <span class="block text-xs font-semibold text-slate-300 mt-1">역사 및 국민 신뢰</span>
               </div>
               <div>
                 <span class="block text-2xl sm:text-3xl font-extrabold text-saka-accent tracking-tight">50만+</span>
-                <span class="block text-xs font-semibold text-slate-500 mt-1">누적 활동 참가자</span>
+                <span class="block text-xs font-semibold text-slate-300 mt-1">누적 활동 참가자</span>
               </div>
             </div>
           </div>
