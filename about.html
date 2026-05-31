@@ -183,9 +183,19 @@
           <h2 class="text-2xl sm:text-4xl font-black text-saka-navy mb-3">이사장 인사말</h2>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-          <!-- 왼쪽: 인사말 본문 -->
-          <div>
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 items-start">
+
+          <!-- 왼쪽: 사진 + 이름 카드 -->
+          <div class="flex flex-col items-center text-center">
+            <img src="./img/jangjoho.jpg" alt="장주호 이사장"
+                 class="w-52 h-64 object-cover object-center rounded-2xl shadow-lg border border-slate-200 mb-5">
+            <p class="text-xs text-slate-400 font-semibold tracking-wider uppercase mb-1">한국생활체육총연맹 (SAKA)</p>
+            <p class="text-2xl font-black text-saka-navy">이사장 &nbsp; 장주호</p>
+          </div>
+
+          <!-- 오른쪽 2칸: 인사말 + 경력 -->
+          <div class="lg:col-span-2 space-y-8">
+            <!-- 인사말 본문 -->
             <div class="space-y-5 text-slate-600 leading-relaxed text-base">
               <p>
                 본 연맹은 "TAFISA"의 산하기관인 "SAKA"를 전신으로 한 연맹이며, 국민들의 체육 및 스포츠 활동을 보다 전문적이고 즐겁게 할 수 있는 사회에 이바지함과 다양한 체육활동의 개발 및 보급, 교육 및 운영 등을 행함으로 대한민국 체육 및 스포츠 산업의 발전을 위해 노력하는 연맹입니다.
@@ -194,76 +204,70 @@
                 생활체육의 다양한 프로그램 개발 및 연구를 통해 모든 국민들이 즐겁고 재밌는 스포츠(체육)활동을 하며 보다 즐겁고 건강하게 생활할 수 있도록 끊임없이 연구하는 연맹이 되도록 만들겠습니다.
               </p>
             </div>
-            <div class="mt-10 pt-6 border-t border-slate-100 flex items-center gap-5">
-              <img src="./img/jangjoho.jpg" alt="장주호 이사장" class="w-16 h-16 rounded-full object-cover object-top flex-shrink-0 shadow-md border-2 border-saka-green/30">
-              <div>
-                <p class="text-xs text-slate-400 font-semibold tracking-wider uppercase mb-0.5">한국생활체육총연맹 (SAKA)</p>
-                <p class="text-xl font-black text-saka-navy">이사장 &nbsp; 장주호</p>
-              </div>
+
+            <!-- 이사장 경력 -->
+            <div class="bg-saka-bg rounded-2xl p-7">
+              <h3 class="font-black text-saka-navy text-base mb-5 flex items-center gap-2">
+                <span class="w-1 h-5 bg-saka-green rounded-full inline-block"></span>
+                이사장 주요 경력
+              </h3>
+              <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 text-sm text-slate-600">
+                <li class="flex items-start gap-2.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-saka-green flex-shrink-0 mt-1.5"></span>
+                  <span>1989~2010 · 국제올림픽위원회(IOC) 생활체육위원</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-saka-green flex-shrink-0 mt-1.5"></span>
+                  <span>대한올림픽위원회(KOC) 사무총장 및 부위원장</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-saka-green flex-shrink-0 mt-1.5"></span>
+                  <span class="font-semibold text-saka-navy">2013~2021 · 세계생활체육연맹(TAFISA) 총재</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-saka-green flex-shrink-0 mt-1.5"></span>
+                  <span>88서울올림픽 조직위원회 사무차장</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-saka-green flex-shrink-0 mt-1.5"></span>
+                  <span>1970 · 대한민국 체육상 수상</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-saka-green flex-shrink-0 mt-1.5"></span>
+                  <span>1989 · 체육훈장 맹호장 수훈</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-saka-green flex-shrink-0 mt-1.5"></span>
+                  <span>제1대 아시아오세아니아 체육연맹 회장</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-saka-green flex-shrink-0 mt-1.5"></span>
+                  <span>한국올림픽아카데미 회장</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-saka-green flex-shrink-0 mt-1.5"></span>
+                  <span>2018 평창올림픽 포럼 개최</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-saka-green flex-shrink-0 mt-1.5"></span>
+                  <span>경희대학교 명예교수</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-saka-green flex-shrink-0 mt-1.5"></span>
+                  <span>대한유도회 회장</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-saka-green flex-shrink-0 mt-1.5"></span>
+                  <span>한국체육과학연구원 원장</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-saka-green flex-shrink-0 mt-1.5"></span>
+                  <span>국제체육학술단체협의회 부회장</span>
+                </li>
+              </ul>
             </div>
           </div>
 
-          <!-- 오른쪽: 이사장 경력 -->
-          <div class="bg-saka-bg rounded-2xl p-8">
-            <h3 class="font-black text-saka-navy text-base mb-5 flex items-center gap-2">
-              <span class="w-1 h-5 bg-saka-green rounded-full inline-block"></span>
-              이사장 주요 경력
-            </h3>
-            <ul class="space-y-3 text-sm text-slate-600">
-              <li class="flex items-start gap-2.5">
-                <span class="w-1.5 h-1.5 rounded-full bg-saka-green flex-shrink-0 mt-1.5"></span>
-                <span>1989~2010 · 국제올림픽위원회(IOC) 생활체육위원</span>
-              </li>
-              <li class="flex items-start gap-2.5">
-                <span class="w-1.5 h-1.5 rounded-full bg-saka-green flex-shrink-0 mt-1.5"></span>
-                <span>대한올림픽위원회(KOC) 사무총장 및 부위원장</span>
-              </li>
-              <li class="flex items-start gap-2.5">
-                <span class="w-1.5 h-1.5 rounded-full bg-saka-green flex-shrink-0 mt-1.5"></span>
-                <span><strong class="text-saka-navy">2013~2021 · 세계생활체육연맹(TAFISA) 총재</strong></span>
-              </li>
-              <li class="flex items-start gap-2.5">
-                <span class="w-1.5 h-1.5 rounded-full bg-saka-green flex-shrink-0 mt-1.5"></span>
-                <span>88서울올림픽 조직위원회 사무차장</span>
-              </li>
-              <li class="flex items-start gap-2.5">
-                <span class="w-1.5 h-1.5 rounded-full bg-saka-green flex-shrink-0 mt-1.5"></span>
-                <span>1970 · 대한민국 체육상 수상</span>
-              </li>
-              <li class="flex items-start gap-2.5">
-                <span class="w-1.5 h-1.5 rounded-full bg-saka-green flex-shrink-0 mt-1.5"></span>
-                <span>1989 · 체육훈장 맹호장 수훈</span>
-              </li>
-              <li class="flex items-start gap-2.5">
-                <span class="w-1.5 h-1.5 rounded-full bg-saka-green flex-shrink-0 mt-1.5"></span>
-                <span>제1대 아시아오세아니아 체육연맹 회장</span>
-              </li>
-              <li class="flex items-start gap-2.5">
-                <span class="w-1.5 h-1.5 rounded-full bg-saka-green flex-shrink-0 mt-1.5"></span>
-                <span>한국올림픽아카데미 회장</span>
-              </li>
-              <li class="flex items-start gap-2.5">
-                <span class="w-1.5 h-1.5 rounded-full bg-saka-green flex-shrink-0 mt-1.5"></span>
-                <span>2018 평창올림픽 포럼 개최</span>
-              </li>
-              <li class="flex items-start gap-2.5">
-                <span class="w-1.5 h-1.5 rounded-full bg-saka-green flex-shrink-0 mt-1.5"></span>
-                <span>경희대학교 명예교수</span>
-              </li>
-              <li class="flex items-start gap-2.5">
-                <span class="w-1.5 h-1.5 rounded-full bg-saka-green flex-shrink-0 mt-1.5"></span>
-                <span>대한유도회 회장</span>
-              </li>
-              <li class="flex items-start gap-2.5">
-                <span class="w-1.5 h-1.5 rounded-full bg-saka-green flex-shrink-0 mt-1.5"></span>
-                <span>한국체육과학연구원 원장</span>
-              </li>
-              <li class="flex items-start gap-2.5">
-                <span class="w-1.5 h-1.5 rounded-full bg-saka-green flex-shrink-0 mt-1.5"></span>
-                <span>국제체육학술단체협의회 부회장</span>
-              </li>
-            </ul>
-          </div>
         </div>
       </div>
     </section>
