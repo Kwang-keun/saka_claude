@@ -52,6 +52,37 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+
+  // Web3Forms 문의 폼 전송 처리
+  const contactForm = document.getElementById('contact-form');
+  const contactSuccess = document.getElementById('contact-success');
+  if (contactForm) {
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = contactForm.querySelector('button[type="submit"]');
+      btn.textContent = '전송 중...';
+      btn.disabled = true;
+      try {
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          body: new FormData(contactForm)
+        });
+        const json = await res.json();
+        if (json.success) {
+          contactForm.classList.add('hidden');
+          contactSuccess.classList.remove('hidden');
+        } else {
+          alert('전송에 실패했습니다. 잠시 후 다시 시도해 주세요.');
+          btn.textContent = '문의 보내기';
+          btn.disabled = false;
+        }
+      } catch {
+        alert('네트워크 오류가 발생했습니다. 다시 시도해 주세요.');
+        btn.textContent = '문의 보내기';
+        btn.disabled = false;
+      }
+    });
+  }
 });
 
 /**
