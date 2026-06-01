@@ -566,23 +566,24 @@
             </span>
             <h2 class="text-3xl sm:text-4xl font-extrabold text-saka-navy">소식 및 뉴스</h2>
           </div>
-          <a href="#" class="text-sm text-slate-500 hover:text-saka-navy font-semibold transition-colors hidden md:block">전체 보기 &rarr;</a>
+          <a href="news.html" class="text-sm text-slate-500 hover:text-saka-navy font-semibold transition-colors hidden md:block">전체 보기 &rarr;</a>
         </div>
 
         <div class="grid md:grid-cols-3 gap-5">
-          <article class="bg-white border border-slate-100 rounded-2xl overflow-hidden hover:shadow-lg transition-shadow group">
+          <!-- 실제 행사 뉴스 카드 -->
+          <article class="bg-white border border-slate-100 rounded-2xl overflow-hidden hover:shadow-lg transition-shadow group cursor-pointer" onclick="location.href='news.html'">
             <div class="h-48 relative overflow-hidden">
-              <img src="./img/slider-1.jpg" alt="전국 생활체육대축전" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-              <div class="absolute inset-0 bg-saka-navy/60 flex flex-col items-end justify-end p-4">
-                <span class="text-[10px] bg-saka-green text-white font-bold px-2 py-0.5 rounded uppercase tracking-widest">Notice</span>
+              <img src="./saka_event/KakaoTalk_20260601_111650038.jpg" alt="2026 국제생활체육포럼" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <div class="absolute inset-0 bg-saka-navy/55 flex flex-col items-end justify-end p-4">
+                <span class="text-[10px] bg-saka-green text-white font-bold px-2 py-0.5 rounded uppercase tracking-widest">Forum</span>
               </div>
             </div>
             <div class="p-5">
-              <span class="text-[11px] bg-saka-green/10 text-saka-green font-semibold px-2 py-0.5 rounded-full">공지사항</span>
+              <span class="text-[11px] bg-saka-green/10 text-saka-green font-semibold px-2 py-0.5 rounded-full">국제 교류</span>
               <h4 class="font-bold text-slate-800 text-sm mt-2 mb-1 leading-snug group-hover:text-saka-blue transition-colors">
-                2026 전국 생활체육대축전 참가 신청 안내
+                IOC·TAFISA 인사 총집결, 2026 SAKA 국제생활체육포럼 성황리 개최
               </h4>
-              <p class="text-xs text-slate-400">2026. 05. 20</p>
+              <p class="text-xs text-slate-400">2026. 03. 23</p>
             </div>
           </article>
 
@@ -621,60 +622,6 @@
       </div>
     </section>
 
-    <!-- ── 주요 활동 갤러리 ── -->
-    <section class="py-20 bg-white">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="mb-12">
-          <span class="inline-flex items-center gap-2 text-xs font-bold tracking-widest text-saka-green uppercase mb-3">
-            <span class="w-5 h-0.5 bg-saka-green rounded"></span>Gallery
-          </span>
-          <h2 class="text-3xl sm:text-4xl font-extrabold text-saka-navy">SAKA·TAFISA 주요 활동</h2>
-        </div>
-
-        <!-- 그리드: 왼쪽 큰 사진 1 + 오른쪽 작은 사진 3 -->
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
-
-          <!-- 왼쪽 메인 사진 -->
-          <div class="lg:col-span-2 relative rounded-2xl overflow-hidden group h-72 lg:h-auto">
-            <img src="./img/slider-4.jpg" alt="ASFAA Congress Busan 2022 Sport for All 선언식"
-                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-            <div class="absolute inset-0 bg-gradient-to-t from-saka-navy/80 via-transparent to-transparent flex flex-col justify-end p-7">
-              <span class="text-saka-green text-xs font-bold uppercase tracking-widest mb-1">ASFAA Congress · Busan 2022</span>
-              <p class="text-white font-black text-xl leading-snug">The Declaration of Sport for All</p>
-            </div>
-          </div>
-
-          <!-- 오른쪽 작은 사진 3장 -->
-          <div class="flex flex-col gap-4">
-
-            <div class="relative rounded-2xl overflow-hidden group h-40">
-              <img src="./img/slider-1.jpg" alt="부산 광안리 생활체육 걷기 행사"
-                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-              <div class="absolute inset-0 bg-gradient-to-t from-saka-navy/75 via-transparent to-transparent flex flex-col justify-end p-4">
-                <p class="text-white font-bold text-sm leading-snug">전국 생활체육 걷기 행사</p>
-              </div>
-            </div>
-
-            <div class="relative rounded-2xl overflow-hidden group h-40">
-              <img src="./img/slider-2.jpg" alt="TAFISA Mission 2030 태권도 시범"
-                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-              <div class="absolute inset-0 bg-gradient-to-t from-saka-navy/75 via-transparent to-transparent flex flex-col justify-end p-4">
-                <p class="text-white font-bold text-sm leading-snug">TAFISA Mission 2030 · For an Active World</p>
-              </div>
-            </div>
-
-            <div class="relative rounded-2xl overflow-hidden group h-40">
-              <img src="./img/slider-3.jpg" alt="TAFISA World Challenge Day 포르투갈"
-                   class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700">
-              <div class="absolute inset-0 bg-gradient-to-t from-saka-navy/75 via-transparent to-transparent flex flex-col justify-end p-4">
-                <p class="text-white font-bold text-sm leading-snug">TAFISA World Challenge Day · Portugal</p>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </section>
 
     <!-- ── CTA ── -->
     <section id="membership" class="py-16 bg-white border-t border-slate-100">
