@@ -53,6 +53,28 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // ── 히어로 슬라이더 ──
+  const heroSlides = document.querySelectorAll('.hero-slide');
+  const heroDots   = document.querySelectorAll('.hero-dot');
+  if (heroSlides.length > 1) {
+    let cur = 0;
+    function heroGoTo(idx) {
+      heroSlides[cur].classList.remove('active');
+      heroDots[cur].classList.remove('active');
+      cur = idx;
+      heroSlides[cur].classList.add('active');
+      heroDots[cur].classList.add('active');
+    }
+    let timer = setInterval(() => heroGoTo((cur + 1) % heroSlides.length), 5000);
+    heroDots.forEach(dot => {
+      dot.addEventListener('click', () => {
+        clearInterval(timer);
+        heroGoTo(parseInt(dot.dataset.index));
+        timer = setInterval(() => heroGoTo((cur + 1) % heroSlides.length), 5000);
+      });
+    });
+  }
+
   // Web3Forms 단체등록 신청 폼
   const registerForm = document.getElementById('register-form');
   const registerSuccess = document.getElementById('register-success');

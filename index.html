@@ -295,9 +295,19 @@
     <!-- ── HERO ── -->
     <section class="relative py-14 md:py-28 overflow-hidden min-h-[auto] md:min-h-[88vh] flex items-center">
 
-      <!-- 배경 사진: object-bottom으로 군중 부분 표시 -->
+      <!-- 배경 슬라이더: 생활체육 ↔ 무예 -->
       <div class="absolute inset-0 -z-20">
-        <img src="./img/slider-1.jpg" alt="생활체육 행사" class="w-full h-full object-cover object-bottom">
+        <div class="hero-slide active">
+          <img src="./img/slider-1.jpg" alt="생활체육 행사" class="w-full h-full object-cover object-bottom">
+        </div>
+        <div class="hero-slide">
+          <img src="./img/redgood.jpg" alt="무예" class="w-full h-full object-cover object-center">
+        </div>
+      </div>
+      <!-- 슬라이드 인디케이터 -->
+      <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+        <button class="hero-dot active" data-index="0" aria-label="슬라이드 1"></button>
+        <button class="hero-dot" data-index="1" aria-label="슬라이드 2"></button>
       </div>
       <!-- 오버레이: 텍스트 가독성 + 이미지 균형 -->
       <div class="absolute inset-0 -z-10 bg-gradient-to-r from-saka-dark/88 via-saka-navy/65 to-saka-navy/35"></div>

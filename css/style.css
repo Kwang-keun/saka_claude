@@ -99,6 +99,29 @@
   text-shadow: 0 1px 4px rgba(0,0,0,0.6);
 }
 
+/* ── 히어로 슬라이더 ── */
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 1.2s ease-in-out;
+}
+.hero-slide.active { opacity: 1; }
+.hero-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  background: rgba(255,255,255,0.4);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  padding: 0;
+}
+.hero-dot.active {
+  width: 28px;
+  background: #ffffff;
+}
+
 /* ── 모바일 최적화 ── */
 @media (max-width: 640px) {
   /* 히어로 헤드라인 줄바꿈 방지 */
