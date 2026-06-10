@@ -65,12 +65,12 @@ document.addEventListener('DOMContentLoaded', () => {
       heroSlides[cur].classList.add('active');
       heroDots[cur].classList.add('active');
     }
-    let timer = setInterval(() => heroGoTo((cur + 1) % heroSlides.length), 5000);
+    let timer = setInterval(() => heroGoTo((cur + 1) % heroSlides.length), 3000);
     heroDots.forEach(dot => {
       dot.addEventListener('click', () => {
         clearInterval(timer);
         heroGoTo(parseInt(dot.dataset.index));
-        timer = setInterval(() => heroGoTo((cur + 1) % heroSlides.length), 5000);
+        timer = setInterval(() => heroGoTo((cur + 1) % heroSlides.length), 3000);
       });
     });
   }
