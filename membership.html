@@ -407,10 +407,7 @@
             온라인 단체등록 신청
           </h3>
 
-          <form id="register-form" action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
-            <input type="hidden" name="access_key" value="f016d188-03db-4a32-8474-a9c20a343b1f">
-            <input type="hidden" name="subject" value="SAKA 단체등록 신청">
-            <input type="hidden" name="from_name" value="SAKA 홈페이지 - 단체등록신청">
+          <form id="register-form" class="space-y-6">
             <input type="checkbox" name="botcheck" class="hidden" style="display:none">
 
             <!-- ①②: 단체명 + 종목 -->
@@ -624,5 +621,73 @@
   </footer>
 
   <script src="./js/main.js"></script>
+  <script>
+  document.getElementById('register-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+
+    const form = this;
+    const btn  = form.querySelector('button[type="submit"]');
+    const val  = name => (form.querySelector(`[name="${name}"]`)?.value || '').trim();
+    const orgType = form.querySelector('[name="08-org-type"]:checked')?.value || '(미선택)';
+
+    const message = [
+      '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━',
+      'SAKA 한국생활체육총연맹 단체등록 신청서',
+      '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━',
+      '',
+      '① 단체명       : ' + val('01-org-name'),
+      '⑦ 종목         : ' + val('07-sport'),
+      '',
+      '② 사무국 전화  : ' + (val('02-office-tel') || '-'),
+      '② 핸드폰       : ' + (val('02-mobile')     || '-'),
+      '② 이메일       : ' + val('02-email'),
+      '',
+      '③ 단체주소     : ' + val('03-address'),
+      '',
+      '④ 대표자 성명  : ' + val('04-representative'),
+      '⑤ 생년월일     : ' + (val('05-birthdate') || '-'),
+      '⑥ 설립일       : ' + (val('06-founded')   || '-'),
+      '',
+      '⑧ 단체 형태    : ' + orgType,
+      '',
+      '⑨ 회원 및 지부 현황',
+      '   · 회원수     : ' + (val('09-members')            || '0') + '명',
+      '   · 시도 지부수: ' + (val('09-regional-branches')  || '0'),
+      '   · 해외 지부수: ' + (val('09-overseas-branches')  || '0'),
+      '   · 기타       : ' + (val('09-other')              || '-'),
+      '',
+      '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━',
+    ].join('\n');
+
+    btn.disabled    = true;
+    btn.textContent = '제출 중...';
+
+    try {
+      const res  = await fetch('https://api.web3forms.com/submit', {
+        method:  'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          access_key: 'f016d188-03db-4a32-8474-a9c20a343b1f',
+          subject:    'SAKA 단체등록 신청 — ' + val('01-org-name'),
+          from_name:  'SAKA 홈페이지',
+          message:    message
+        })
+      });
+      const data = await res.json();
+      if (data.success) {
+        form.classList.add('hidden');
+        document.getElementById('register-success').classList.remove('hidden');
+      } else {
+        alert('제출에 실패했습니다. 잠시 후 다시 시도해 주세요.');
+        btn.disabled    = false;
+        btn.textContent = '단체등록 신청서 제출';
+      }
+    } catch (err) {
+      alert('네트워크 오류가 발생했습니다. 잠시 후 다시 시도해 주세요.');
+      btn.disabled    = false;
+      btn.textContent = '단체등록 신청서 제출';
+    }
+  });
+  </script>
 </body>
 </html>
