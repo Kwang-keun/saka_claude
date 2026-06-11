@@ -417,12 +417,12 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <div>
                 <label class="block text-sm font-bold text-slate-700 mb-1.5">① 단체명 <span class="text-red-400">*</span></label>
-                <input type="text" name="단체명" required placeholder="단체 공식 명칭"
+                <input type="text" name="01-org-name" required placeholder="단체 공식 명칭"
                   class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-saka-green/30 focus:border-saka-green transition-colors">
               </div>
               <div>
                 <label class="block text-sm font-bold text-slate-700 mb-1.5">⑦ 종목 <span class="text-red-400">*</span></label>
-                <input type="text" name="종목" required placeholder="예: 태권도, 축구, 생활체육 등"
+                <input type="text" name="07-sport" required placeholder="예: 태권도, 축구, 생활체육 등"
                   class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-saka-green/30 focus:border-saka-green transition-colors">
               </div>
             </div>
@@ -431,11 +431,11 @@
             <div>
               <label class="block text-sm font-bold text-slate-700 mb-2">② 연락처</label>
               <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                <input type="tel" name="사무국전화" placeholder="사무국 전화번호"
+                <input type="tel" name="02-office-tel" placeholder="사무국 전화번호"
                   class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-saka-green/30 focus:border-saka-green transition-colors">
-                <input type="tel" name="핸드폰" placeholder="대표자 핸드폰"
+                <input type="tel" name="02-mobile" placeholder="대표자 핸드폰"
                   class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-saka-green/30 focus:border-saka-green transition-colors">
-                <input type="email" name="이메일" required placeholder="이메일 주소 *"
+                <input type="email" name="02-email" required placeholder="이메일 주소 *"
                   class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-saka-green/30 focus:border-saka-green transition-colors">
               </div>
             </div>
@@ -443,7 +443,7 @@
             <!-- ③: 단체주소 -->
             <div>
               <label class="block text-sm font-bold text-slate-700 mb-1.5">③ 단체주소 <span class="text-red-400">*</span></label>
-              <input type="text" name="단체주소" required placeholder="단체 사무소 주소"
+              <input type="text" name="03-address" required placeholder="단체 사무소 주소"
                 class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-saka-green/30 focus:border-saka-green transition-colors">
             </div>
 
@@ -451,17 +451,17 @@
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
               <div>
                 <label class="block text-sm font-bold text-slate-700 mb-1.5">④ 대표자 성명 <span class="text-red-400">*</span></label>
-                <input type="text" name="대표자성명" required placeholder="성명"
+                <input type="text" name="04-representative" required placeholder="성명"
                   class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-saka-green/30 focus:border-saka-green transition-colors">
               </div>
               <div>
                 <label class="block text-sm font-bold text-slate-700 mb-1.5">⑤ 생년월일</label>
-                <input type="text" name="생년월일" placeholder="예: 1970-01-01"
+                <input type="text" name="05-birthdate" placeholder="예: 1970-01-01"
                   class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-saka-green/30 focus:border-saka-green transition-colors">
               </div>
               <div>
                 <label class="block text-sm font-bold text-slate-700 mb-1.5">⑥ 설립일</label>
-                <input type="text" name="설립일" placeholder="예: 2010-03-15"
+                <input type="text" name="06-founded" placeholder="예: 2010-03-15"
                   class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-saka-green/30 focus:border-saka-green transition-colors">
               </div>
             </div>
@@ -471,15 +471,15 @@
               <label class="block text-sm font-bold text-slate-700 mb-2">⑧ 단체 형태 <span class="text-red-400">*</span></label>
               <div class="flex flex-wrap gap-4">
                 <label class="flex items-center gap-2 cursor-pointer">
-                  <input type="radio" name="단체형태" value="사단법인" class="accent-saka-green w-4 h-4">
+                  <input type="radio" name="08-org-type" value="사단법인" class="accent-saka-green w-4 h-4">
                   <span class="text-sm text-slate-700">사단법인</span>
                 </label>
                 <label class="flex items-center gap-2 cursor-pointer">
-                  <input type="radio" name="단체형태" value="비영리민간단체" class="accent-saka-green w-4 h-4">
+                  <input type="radio" name="08-org-type" value="비영리민간단체" class="accent-saka-green w-4 h-4">
                   <span class="text-sm text-slate-700">비영리민간단체</span>
                 </label>
                 <label class="flex items-center gap-2 cursor-pointer">
-                  <input type="radio" name="단체형태" value="클럽·동호인" class="accent-saka-green w-4 h-4">
+                  <input type="radio" name="08-org-type" value="클럽·동호인" class="accent-saka-green w-4 h-4">
                   <span class="text-sm text-slate-700">기타 (클럽·동호인)</span>
                 </label>
               </div>
@@ -491,22 +491,22 @@
               <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
                 <div>
                   <p class="text-xs text-slate-400 mb-1">회원수 (명)</p>
-                  <input type="number" name="회원수" placeholder="0"
+                  <input type="number" name="09-members" placeholder="0"
                     class="w-full px-3 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-saka-green/30 focus:border-saka-green transition-colors">
                 </div>
                 <div>
                   <p class="text-xs text-slate-400 mb-1">시·도 지부수</p>
-                  <input type="number" name="시도지부수" placeholder="0"
+                  <input type="number" name="09-regional-branches" placeholder="0"
                     class="w-full px-3 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-saka-green/30 focus:border-saka-green transition-colors">
                 </div>
                 <div>
                   <p class="text-xs text-slate-400 mb-1">해외 지부수</p>
-                  <input type="number" name="해외지부수" placeholder="0"
+                  <input type="number" name="09-overseas-branches" placeholder="0"
                     class="w-full px-3 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-saka-green/30 focus:border-saka-green transition-colors">
                 </div>
                 <div>
                   <p class="text-xs text-slate-400 mb-1">기타</p>
-                  <input type="text" name="지부기타" placeholder="기타 사항"
+                  <input type="text" name="09-other" placeholder="기타 사항"
                     class="w-full px-3 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-saka-green/30 focus:border-saka-green transition-colors">
                 </div>
               </div>
@@ -515,7 +515,7 @@
             <!-- 서약 -->
             <div class="bg-saka-bg rounded-xl p-4 text-sm text-slate-600 leading-relaxed border border-slate-200">
               <label class="flex items-start gap-3 cursor-pointer">
-                <input type="checkbox" name="서약동의" required class="mt-1 accent-saka-green w-4 h-4 flex-shrink-0">
+                <input type="checkbox" name="agreement" required class="mt-1 accent-saka-green w-4 h-4 flex-shrink-0">
                 <span>(사)한국생활체육총연맹(SAKA) 정관에 의거한 가맹·탈퇴규정에 의하여 위와 같이 가맹(가입)을 신청하며, 동 정관에 정한 <strong class="text-saka-navy">권리 및 의무를 준수할 것을 서약</strong>합니다. <span class="text-red-400">*</span></span>
               </label>
             </div>
