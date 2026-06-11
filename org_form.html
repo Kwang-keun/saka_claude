@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>조직도</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #f8f8f8;
+      font-family: 'Malgun Gothic', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+      padding: 20px;
+    }
+    .org-outer {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+    }
+    .org-wrap {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 1778 / 1000;
+      overflow: hidden;
+    }
+    .org-title {
+      position: absolute;
+      left: 5.1%; top: 6.8%;
+      font-size: clamp(12px, 1.6vw, 22px);
+      font-weight: bold;
+      color: #1e3a5f;
+    }
+    .box {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2px 4px;
+      text-align: center;
+      border-radius: 3px;
+    }
+    .box-dark {
+      background: #1e3a5f;
+      color: white;
+    }
+    .box-light {
+      background: white;
+      color: #1e3a5f;
+      border: 1px solid #1e3a5f;
+    }
+    .box-name {
+      font-weight: bold;
+      font-size: clamp(7px, 0.95vw, 14px);
+      line-height: 1.2;
+    }
+    .box-person {
+      font-size: clamp(6px, 0.75vw, 11px);
+      opacity: 0.85;
+      margin-top: 1px;
+    }
+    svg.lines {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      overflow: visible;
+    }
+    svg.lines line {
+      stroke: #555;
+      stroke-width: 0.25;
+    }
+  </style>
+</head>
+<body>
+<div class="org-outer">
+  <div class="org-wrap">
+
+    <!-- ── SVG 연결선 ── -->
+    <svg class="lines" viewBox="0 0 100 100" preserveAspectRatio="none">
+
+      <!-- 기술전문위원회 → 수평바 -->
+      <line x1="50" y1="26.3" x2="50" y2="32.8"/>
+
+      <!-- 수평바 (전체) -->
+      <line x1="10" y1="32.8" x2="90" y2="32.8"/>
+
+      <!-- 수평바 → 각 부서 수직 드롭 -->
+      <line x1="10" y1="32.8" x2="10" y2="35.5"/>
+      <line x1="26" y1="32.8" x2="26" y2="35.5"/>
+      <line x1="42" y1="32.8" x2="42" y2="35.5"/>
+      <line x1="58" y1="32.8" x2="58" y2="35.5"/>
+      <line x1="74" y1="32.8" x2="74" y2="35.5"/>
+      <line x1="90" y1="32.8" x2="90" y2="35.5"/>
+
+      <!-- 기획조정실 브래킷 (spine x=4.9) -->
+      <line x1="4.9" y1="46.2" x2="4.9" y2="78.0"/>
+      <line x1="4.9" y1="51.95" x2="6.2" y2="51.95"/>
+      <line x1="4.9" y1="62.75" x2="6.2" y2="62.75"/>
+      <line x1="4.9" y1="73.55" x2="6.2" y2="73.55"/>
+
+      <!-- 경기부 브래킷 (spine x=21) -->
+      <line x1="21" y1="46.2" x2="21" y2="88.8"/>
+      <line x1="21" y1="52.05" x2="22.3" y2="52.05"/>
+      <line x1="21" y1="62.95" x2="22.3" y2="62.95"/>
+      <line x1="21" y1="73.75" x2="22.3" y2="73.75"/>
+      <line x1="21" y1="84.35" x2="22.3" y2="84.35"/>
+
+      <!-- 심사부 브래킷 (spine x=37) -->
+      <line x1="37" y1="46.2" x2="37" y2="78.0"/>
+      <line x1="37" y1="51.95" x2="38.1" y2="51.95"/>
+      <line x1="37" y1="62.75" x2="38.1" y2="62.75"/>
+      <line x1="37" y1="73.55" x2="38.1" y2="73.55"/>
+
+      <!-- 연수부 브래킷 (spine x=53.1) -->
+      <line x1="53.1" y1="46.2" x2="53.1" y2="56.1"/>
+      <line x1="53.1" y1="51.65" x2="54.1" y2="51.65"/>
+
+      <!-- 국내.국제분과 브래킷 (spine x=69.2) -->
+      <line x1="69.2" y1="46.2" x2="69.2" y2="67.4"/>
+      <line x1="69.2" y1="51.95" x2="70.2" y2="51.95"/>
+      <line x1="69.2" y1="62.95" x2="70.2" y2="62.95"/>
+
+      <!-- 홍보실 브래킷 (spine x=85.2) -->
+      <line x1="85.2" y1="46.2" x2="85.2" y2="56.4"/>
+      <line x1="85.2" y1="51.95" x2="86.2" y2="51.95"/>
+
+    </svg>
+
+    <!-- ── 제목 ── -->
+    <div class="org-title">• 조직도</div>
+
+    <!-- ── 기술전문위원회 ── -->
+    <div class="box box-dark"
+         style="left:42.5%;top:15.6%;width:15%;height:10.7%;">
+      <div class="box-name">기술전문위원회</div>
+      <div class="box-person">ㅇ ㅇ ㅇ</div>
+    </div>
+
+    <!-- ── 주요 부서 (6개) ── -->
+    <div class="box box-dark"
+         style="left:2.5%;top:35.5%;width:15%;height:10.7%;">
+      <div class="box-name">기획조정실</div>
+      <div class="box-person">담당자 : ㅇㅇㅇ</div>
+    </div>
+    <div class="box box-dark"
+         style="left:18.5%;top:35.5%;width:15%;height:10.7%;">
+      <div class="box-name">경기부</div>
+      <div class="box-person">담당자 :</div>
+    </div>
+    <div class="box box-dark"
+         style="left:34.5%;top:35.5%;width:15%;height:10.7%;">
+      <div class="box-name">심사부</div>
+      <div class="box-person">담당자 :</div>
+    </div>
+    <div class="box box-dark"
+         style="left:50.5%;top:35.5%;width:15%;height:10.7%;">
+      <div class="box-name">연수부</div>
+      <div class="box-person">담당자 : ㅇㅇㅇ</div>
+    </div>
+    <div class="box box-dark"
+         style="left:66.5%;top:35.5%;width:15%;height:10.7%;">
+      <div class="box-name">국내.국제분과</div>
+      <div class="box-person">담당자 : ㅇㅇㅇ</div>
+    </div>
+    <div class="box box-dark"
+         style="left:82.5%;top:35.5%;width:15%;height:10.7%;">
+      <div class="box-name">홍보실</div>
+      <div class="box-person">담당자 : ㅇㅇㅇ</div>
+    </div>
+
+    <!-- ── 기획조정실 하위 ── -->
+    <div class="box box-light"
+         style="left:6.2%;top:47.5%;width:11.2%;height:8.9%;">
+      <div class="box-name">전략기획부</div>
+      <div class="box-person">담당자 : ㅇㅇㅇ</div>
+    </div>
+    <div class="box box-light"
+         style="left:6.2%;top:58.3%;width:11.2%;height:8.9%;">
+      <div class="box-name">예산정책부</div>
+      <div class="box-person">담당자 : ㅇㅇㅇ</div>
+    </div>
+    <div class="box box-light"
+         style="left:6.2%;top:69.1%;width:11.2%;height:8.9%;">
+      <div class="box-name">예산정책부</div>
+      <div class="box-person">담당자 : ㅇㅇㅇ</div>
+    </div>
+
+    <!-- ── 경기부 하위 ── -->
+    <div class="box box-light"
+         style="left:22.3%;top:47.6%;width:11.2%;height:8.9%;">
+      <div class="box-name">경기분과</div>
+      <div class="box-person">담당자 : ㅇㅇㅇ</div>
+    </div>
+    <div class="box box-light"
+         style="left:22.3%;top:58.5%;width:11.2%;height:8.9%;">
+      <div class="box-name">심판분과</div>
+      <div class="box-person">담당자 : ㅇㅇㅇ</div>
+    </div>
+    <div class="box box-light"
+         style="left:22.3%;top:69.3%;width:11.2%;height:8.9%;">
+      <div class="box-name">기록분과</div>
+      <div class="box-person">담당자 : ㅇㅇㅇ</div>
+    </div>
+    <div class="box box-light"
+         style="left:22.3%;top:79.9%;width:11.2%;height:8.9%;">
+      <div class="box-name">의전.질서분과</div>
+      <div class="box-person">담당자 : ㅇㅇㅇ</div>
+    </div>
+
+    <!-- ── 심사부 하위 ── -->
+    <div class="box box-light"
+         style="left:38.1%;top:47.5%;width:11.2%;height:8.9%;">
+      <div class="box-name">심사운영분과</div>
+      <div class="box-person">담당자 : ㅇㅇㅇ</div>
+    </div>
+    <div class="box box-light"
+         style="left:38.2%;top:58.3%;width:11.2%;height:8.9%;">
+      <div class="box-name">총무분과</div>
+      <div class="box-person">담당자 : ㅇㅇㅇ</div>
+    </div>
+    <div class="box box-light"
+         style="left:38.2%;top:69.1%;width:11.2%;height:8.9%;">
+      <div class="box-name">자격기록분과</div>
+      <div class="box-person">담당자 : ㅇㅇㅇ</div>
+    </div>
+
+    <!-- ── 연수부 하위 ── -->
+    <div class="box box-light"
+         style="left:54.1%;top:47.2%;width:11.2%;height:8.9%;">
+      <div class="box-name">교육지원부</div>
+      <div class="box-person">담당자 : ㅇㅇㅇ</div>
+    </div>
+
+    <!-- ── 국내.국제분과 하위 ── -->
+    <div class="box box-light"
+         style="left:70.2%;top:47.5%;width:11.2%;height:8.9%;">
+      <div class="box-name">국내부</div>
+      <div class="box-person">담당자 : ㅇㅇㅇ</div>
+    </div>
+    <div class="box box-light"
+         style="left:70.2%;top:58.5%;width:11.2%;height:8.9%;">
+      <div class="box-name">국제부</div>
+      <div class="box-person">담당자 : ㅇㅇㅇ</div>
+    </div>
+
+    <!-- ── 홍보실 하위 ── -->
+    <div class="box box-light"
+         style="left:86.2%;top:47.5%;width:11.2%;height:8.9%;">
+      <div class="box-name">홍보실</div>
+      <div class="box-person">담당자 : ㅇㅇㅇ</div>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>
