@@ -532,8 +532,8 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
               </svg>
             </div>
-            <h3 class="font-black text-saka-navy text-2xl mb-2">신청이 접수되었습니다!</h3>
-            <p class="text-slate-500">담당자 확인 후 입력하신 이메일로 연락 드리겠습니다.</p>
+            <h3 class="font-black text-saka-navy text-2xl mb-2">회원 가입이 완료되었습니다!</h3>
+            <p class="text-slate-500">담당자 확인 후 추가 서류가 필요시 입력하신 이메일로 연락 드리겠습니다.</p>
           </div>
         </div>
 
@@ -557,6 +557,25 @@
     </section>
 
   </main>
+
+  <!-- ── 제출 완료 모달 ── -->
+  <div id="success-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 hidden">
+    <div class="bg-white rounded-2xl shadow-2xl p-10 text-center max-w-sm mx-4">
+      <div class="w-20 h-20 bg-saka-green/10 rounded-full flex items-center justify-center mx-auto mb-5">
+        <svg class="w-10 h-10 text-saka-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+        </svg>
+      </div>
+      <h3 class="font-black text-saka-navy text-2xl mb-3">회원 가입이 완료되었습니다!</h3>
+      <p class="text-slate-500 text-sm leading-relaxed">담당자 확인 후 추가 서류가 필요시<br>입력하신 이메일로 연락 드리겠습니다.</p>
+      <div class="mt-6">
+        <div class="h-1.5 bg-slate-100 rounded-full overflow-hidden">
+          <div id="modal-progress" class="h-full bg-saka-green rounded-full" style="width:100%;transition:width 1s linear"></div>
+        </div>
+        <p class="text-xs text-slate-400 mt-2"><span id="modal-countdown">5</span>초 후 자동으로 닫힙니다</p>
+      </div>
+    </div>
+  </div>
 
   <!-- ── FOOTER ── -->
   <footer class="bg-saka-dark text-slate-400 pt-16 pb-12 border-t border-white/5 relative overflow-hidden">
@@ -677,6 +696,25 @@
       if (data.success) {
         form.classList.add('hidden');
         document.getElementById('register-success').classList.remove('hidden');
+
+        // 5초 카운트다운 모달
+        const modal     = document.getElementById('success-modal');
+        const progress  = document.getElementById('modal-progress');
+        const countEl   = document.getElementById('modal-countdown');
+        modal.classList.remove('hidden');
+
+        let remaining = 5;
+        // 프로그레스 바 즉시 시작
+        requestAnimationFrame(() => { progress.style.width = '0%'; });
+
+        const timer = setInterval(() => {
+          remaining--;
+          countEl.textContent = remaining;
+          if (remaining <= 0) {
+            clearInterval(timer);
+            modal.classList.add('hidden');
+          }
+        }, 1000);
       } else {
         alert('제출에 실패했습니다. 잠시 후 다시 시도해 주세요.');
         btn.disabled    = false;
